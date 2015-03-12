@@ -4,7 +4,8 @@ title: 我们项目中启动页面发现的内存泄露
 ---
 偶然在MAT中发现我们的LaunchActivity没有回收
 
-[id:] https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/matbeforechange.png
+ 
+<img style="float: right" src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/matbeforechange.png">
 
 Heap里也发现内存占有率比较高
 
