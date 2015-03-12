@@ -6,11 +6,12 @@ title: 我们项目中启动页面发现的内存泄露
 
  
 <img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/matbeforechange.png">
-
+<br/>
 Heap里也发现内存占有率比较高
 
  
 <img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/heapbeforechange.png">
+<br/>
 * 分析源码，排出可能引起泄露的Handler , Thread等元素， 发现有一行代码比较可疑
 
 *   科大讯飞语音搜索：设置申请的应用appid
@@ -22,14 +23,15 @@ SpeechUtility.createUtility(this, "appid="+getString(R.string.voice_app_id));
 后来改为
 
 SpeechUtility.createUtility(this.getApplicationContext(), "appid="+getString(R.string.voice_app_id));
-
+<br/>
 *然后再跑Heap和MAT就发现正常了
 
 修改后的MAT
 
  
 <img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/matafterchange.png">
+<br/>
 *修改后的Heap
-
+<br/>
  
 <img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/heapafterchange.png">
