@@ -4,11 +4,11 @@ title: 我们项目中启动页面发现的内存泄露
 ---
 偶然在MAT中发现我们的LaunchActivity没有回收
 
-avatar: https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/matbeforechange.png
+[id:] https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/matbeforechange.png
 
 Heap里也发现内存占有率比较高
 
-avatar: https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/heapbeforechange.png
+[id:] https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/heapbeforechange.png
 
 分析源码，排出可能引起泄露的Handler , Thread等元素， 发现有一行代码比较可疑
 
@@ -26,8 +26,8 @@ SpeechUtility.createUtility(this.getApplicationContext(), "appid="+getString(R.s
 
 修改后的MAT
 
-avatar: https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/matafterchange.png
+[id:] https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/matafterchange.png
 
 修改后的Heap
 
-avatar: https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/heapafterchange.png
+[id:] https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/heapafterchange.png
