@@ -5,12 +5,12 @@ title: 我们项目中启动页面发现的内存泄露
 偶然在MAT中发现我们的LaunchActivity没有回收
 
  
-<img style="float: right" src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/matbeforechange.png">
+<img style="float: left" src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/matbeforechange.png">
 
 Heap里也发现内存占有率比较高
 
-[id:] https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/heapbeforechange.png
-
+ 
+<img style="float: left" src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/heapbeforechange.png">
 分析源码，排出可能引起泄露的Handler , Thread等元素， 发现有一行代码比较可疑
 
 // 科大讯飞语音搜索：设置申请的应用appid
@@ -27,8 +27,9 @@ SpeechUtility.createUtility(this.getApplicationContext(), "appid="+getString(R.s
 
 修改后的MAT
 
-[id:] https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/matafterchange.png
-
+ 
+<img style="float: left" src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/matafterchange.png">
 修改后的Heap
 
-[id:] https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/heapafterchange.png
+ 
+<img style="float: left" src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/heapafterchange.png">
