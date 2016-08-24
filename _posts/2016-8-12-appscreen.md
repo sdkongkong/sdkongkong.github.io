@@ -1,39 +1,14 @@
 ---
 layout: post
-title: 我们项目中启动页面发现的内存泄露
+title: apps i have done
 ---
-* 偶然在MAT中发现我们的LaunchActivity没有回收
-
+* Qunar Travel
  <br  />
-<img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/matbeforechange.png">
-<br  />
-Heap里也发现内存占有率比较高
 
- <br  />
-<img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/heapbeforechange.png">
-<br  />
-* 分析源码，排出可能引起泄露的Handler , Thread等元素， 发现有一行代码比较可疑
-<br  />
-*   科大讯飞语音搜索：设置申请的应用appid
-<br  />
-SpeechUtility.createUtility(this, "appid="+getString(R.string.voice_app_id));
-<br  />
-* 这行代码原来是在Application里的，使用this应该没有问题， 但是挪到LaunchActiviy之后还用this就不合适了，因为注册之后，讯飞一直会持有这个Acitivity的引用
-<br  />
-后来改为
-<br  />
-SpeechUtility.createUtility(this.getApplicationContext(), "appid="+getString(R.string.voice_app_id));
-<br  />
-*然后再跑Heap和MAT就发现正常了
-<br  />
-修改后的MAT
 <br  />
  
-<img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/matafterchange.png">
 <br  />
-*修改后的Heap
-<br  />
-
+*   Travel Record
  
-
-![Screenshot](https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/heapafterchange.png)
+* Gome
+ 
