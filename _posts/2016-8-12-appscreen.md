@@ -16,8 +16,7 @@ title: apps i have done
 <br  />
  <img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/record2.png" height="480" width="270">
 <br  />
-<img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/record3.png" height="480" width="270">
-<br  />
+
 * Qchat
 <br  />
 <img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/qchat1.png" height="480" width="270">
