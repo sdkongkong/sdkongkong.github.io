@@ -20,12 +20,12 @@ title: apps i have done
 <br  />
 * Qchat
 <br  />
-<img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/qchat1.png">
+<img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/qchat1.png" height="960" width="540">
 <br  />
- <img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/qchat2.png">
+ <img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/qchat2.png" height="960" width="540">
 <br  />
-<img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/qchat3.png">
+<img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/qchat3.png" height="960" width="540">
 <br  />
-<img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/qchat4.png">
+<img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/qchat4.png" height="960" width="540">
 <br  />
  
