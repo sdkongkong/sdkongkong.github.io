@@ -1,37 +1,37 @@
 ---
 layout: post
-title: 我们项目中启动页面发现的内存泄露
+title: Found a memory leak at LaunchActivity
 ---
-* 偶然在MAT中发现我们的LaunchActivity没有回收
+* Occasional,i found LaunchActivity when i was using MAT, you can see LaunchActivity on the screenshot
 
  <br  />
 <img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/matbeforechange.png">
 <br  />
-Heap里也发现内存占有率比较高
+I also found the memory usage is really hign in Heap
 
  <br  />
 <img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/heapbeforechange.png">
 <br  />
-* 分析源码，排出可能引起泄露的Handler , Thread等元素， 发现有一行代码比较可疑
+* Check the code，carefully focoused on  Handler , Thread,  then i found a line of code is suspicious
 <br  />
-*   科大讯飞语音搜索：设置申请的应用appid
+*   apply  the  appid for a thrid library which is for speech recognize
 <br  />
 SpeechUtility.createUtility(this, "appid="+getString(R.string.voice_app_id));
 <br  />
-* 这行代码原来是在Application里的，使用this应该没有问题， 但是挪到LaunchActiviy之后还用this就不合适了，因为注册之后，讯飞一直会持有这个Acitivity的引用
+* this line of code was in  custom Application class，it should be ok with this there， but someone moved it to LaunchActiviy, and still using "this",that would make the application always keep the Activity's reference.
 <br  />
-后来改为
+then i change it to
 <br  />
 SpeechUtility.createUtility(this.getApplicationContext(), "appid="+getString(R.string.voice_app_id));
 <br  />
-*然后再跑Heap和MAT就发现正常了
+*then check the Heap ad MAT
 <br  />
-修改后的MAT
+the MAT after fixing
 <br  />
  
 <img  src="https://raw.githubusercontent.com/sdkongkong/sdkongkong.github.io/master/images/20150312/matafterchange.png">
 <br  />
-*修改后的Heap
+*the heap after fixing
 <br  />
 
  
